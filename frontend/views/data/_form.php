@@ -28,7 +28,8 @@ use kartik\date\DatePicker;
 <?= $form->field($model, 'tanggal')->widget(DatePicker::classname(), [
     'options' => ['placeholder' => '...'],
     'pluginOptions' => [
-        'autoclose'=>true
+        'autoclose'=>true,
+        'format' => 'yyyy-mm-d'
     ]
 ]); ?>
 

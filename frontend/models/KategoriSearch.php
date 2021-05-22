@@ -40,7 +40,7 @@ class KategoriSearch extends Kategori
      */
     public function search($params)
     {
-        $query = Kategori::find();
+        $query = Kategori::find()->orderBy(['prioritas' => SORT_ASC]);
 
         // add conditions that should always apply here
 

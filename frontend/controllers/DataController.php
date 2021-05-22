@@ -66,7 +66,10 @@ class DataController extends Controller
     {
         $model = new Data();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->tanggal = date("Y-m-d H:i:s");
+            $model->save();
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -86,7 +89,9 @@ class DataController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->tanggal = date("Y-m-d H:i:s");
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

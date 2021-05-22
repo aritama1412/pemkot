@@ -26,14 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'nama',
             'nominal',
 
             [
                 'attribute'=> 'kategori',
                 'value'=> function ($model) {
-                    if($model->jenis == 1){
+                    if($model->kategori == 1){
                         return "Pemasukan";
                     }else{
                         return "Pengeluaran";
