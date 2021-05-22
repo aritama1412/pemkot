@@ -76,9 +76,36 @@ class SiteController extends Controller
     public function actionIndex()
     {
         // return $this->render('index');
+        $user = User::find()->count();
         return $this->render('index', [
-            // 'user' => $user,
+            'user' => $user,
         ]);
+        // if($user != 0){
+        //     if (!Yii::$app->user->isGuest) {
+        //         return $this->goHome();
+        //     }
+        //     $model = new LoginForm();
+        //     if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        //         return $this->goBack();
+        //     } else {
+        //         $model->password = '';
+
+        //         return $this->render('login', [
+        //             'model' => $model,
+        //         ]);
+        //     }
+        // }else{
+        //     $model = new SignupForm();
+        //     if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+        //         Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+        //         return $this->goHome();
+        //     }
+    
+        //     return $this->render('signup', [
+        //         'model' => $model,
+        //     ]);
+        // }
+    
     }
 
     public function actionMain()
